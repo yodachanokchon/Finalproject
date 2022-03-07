@@ -4,7 +4,7 @@ import 'quizzler_page.dart';
 void main() {
   runApp(
     MaterialApp(
-      title: 'Quizzler !!',
+      title: 'Animal Quizz !!',
       home: FirstScreen(),
     ),
   );
@@ -18,7 +18,6 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
-  //TODO : ศึกษาการกำหนดค่าเพื่อใช้งาน textField -> https://docs.flutter.dev/cookbook/forms/retrieve-input
   //เริ่มต้นกำหนดค่าสำหรับ textField
   final myController = TextEditingController();
   @override
@@ -37,7 +36,6 @@ class _FirstScreenState extends State<FirstScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          //TODO 1: ใส่ข้อความตกแต่งหรือ widget เพิ่มเติม เพื่อให้ผู้ใช้ทราบว่าต้องกรอกชื่อ
           const Expanded(
             child: Padding(
               padding: EdgeInsets.all(10.0),
@@ -63,11 +61,9 @@ class _FirstScreenState extends State<FirstScreen> {
               ),
             ),
           ),
-          //TODO : ศึกษาตัวอย่างการใช้ GestureDetector และ onTap -> https://docs.flutter.dev/cookbook/gestures/handling-taps
           //เริ่มต้นตัวอย่างการใช้งาน
           GestureDetector(
             onTap: () {
-              //TODO : ศึกษาตัวอย่างการใช้ Navigator.push -> https://docs.flutter.dev/cookbook/navigation/navigation-basics
               Navigator.push(context, MaterialPageRoute(builder: (context) => Quizzler(name: myController.text)));
             },
             child: Expanded(

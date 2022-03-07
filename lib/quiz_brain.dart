@@ -3,18 +3,14 @@ class QuizBrain {
 
   int _questionNumber = 0;
 
-  //TODO 2: ปรับเปลี่ยนหรือเพิ่มชุดคำถามใน questionBank
   List<Question> _questionBank=[
-    Question(q: '1 + 1 = 2', a: true),
-    Question(q: '1 + 3 = 4', a: true),
-    Question(q: '1 + 1 = 3', a: false),
-    Question(q: '69 + 69 = 138', a: true),
-    Question(q: '420 + 69 = 479', a: false),
-    Question(q: '3246 - 346 = 2800', a: false),
-    Question(q: '23 x 43 = 989', a: true),
-    Question(q: '563 x 12 = 6656', a: false),
-    Question(q: '5648 x 7548 = 42631104', a: true),
-    Question(q: '24355 x 23596 = 574780580', a: false),
+    Question(q: 'Is this a dog', a: false, p: 'Images/cat-talk-eyes-553942-hero-df606397b6ff47b19f3ab98589c3e2ce.jpg'),
+    Question(q: 'This animal is omnivore', a: true, p: 'Images/3408.webp'),
+    Question(q: 'This animal is eatable', a: true, p: 'Images/pig-1713996_960_720.jpg'),
+    Question(q: 'This is chicken', a: true, p: 'Images/rooster-Rhode-Island-Red-roosters-chicken-domestication.webp'),
+    Question(q: 'This animal name is kangaru', a: false, p: 'Images/unnamed.png'),
+    Question(q: 'This animal is herbivore', a: true, p: 'Images/_122969979_hippo_nicholasmathevon.jpg'),
+    Question(q: 'This animal can fly', a: false, p: 'Images/Eagle-in-flight-Richard-Lee-Unsplash-1-edited-scaled.webp'),
   ];
 
   void nextQuestion() {
@@ -41,6 +37,10 @@ class QuizBrain {
 
   void reset() {
     _questionNumber = 0;
+  }
+
+  String? getQuestionImg() {
+    return _questionBank[_questionNumber].questionImg;
   }
 
 }

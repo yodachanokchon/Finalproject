@@ -44,7 +44,6 @@ class ResultPage extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              //TODO 3: ใช้ Navigator.push เพื่อไปยัง FirstScreen() โดยไม่ต้องส่งค่าใดๆไปด้วย
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => FirstScreen()));
             },

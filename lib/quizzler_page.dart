@@ -5,7 +5,6 @@ import 'result_page.dart';
 QuizBrain quizBrain = QuizBrain();
 
 class Quizzler extends StatelessWidget {
-  //TODO : ตัวอย่างการสร้าง constructor ในภาษา dart
   //โดยในที่นี้กำหนดให้ เมื่อมีการเรียกใช้ Quizzler จะต้องมีการส่งค่า name มาให้ด้วย
   //เช่น Quizzler(name: myController.text) ในไฟล์ main.dart
   Quizzler({required this.name});
@@ -60,7 +59,6 @@ class _QuizPageState extends State<QuizPage> {
           ));
         }
         quizBrain.reset();
-        //TODO : ศึกษาตัวอย่างการใช้ Navigator.push ไปยัง ResultPage() โดยต้องส่งคะแนนรวมไปให้ด้วย
         Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage(score: totalScore.toString())));
       }
       else {
@@ -108,7 +106,17 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Center(
-              child: Text(
+              child: Image(
+                  image: AssetImage(quizBrain.getQuestionImg()!)
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 5,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
                 quizBrain.getQuestionText()!,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
@@ -118,10 +126,9 @@ class _QuizPageState extends State<QuizPage> {
               ),
             ),
           ),
-        ),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(1.0),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(primary: Colors.green),
               child: const Text(
@@ -139,7 +146,7 @@ class _QuizPageState extends State<QuizPage> {
         ),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(1.0),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(primary: Colors.red),
               child: const Text(
